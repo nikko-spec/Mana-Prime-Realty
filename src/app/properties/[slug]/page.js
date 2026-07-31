@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import InquiryForm from "@/components/InquiryForm";
+import PropertyGallery from "@/components/PropertyGallery";
 import { getAllListings, getListingBySlug, getYoutubeId } from "@/lib/listings";
 
 export function generateStaticParams() {
@@ -36,15 +37,12 @@ export default function PropertyDetailPage({ params }) {
           <h1 className="mt-2 font-display text-4xl italic text-ink">{listing.title}</h1>
           <p className="mt-2 text-ink/60">{listing.location}</p>
 
-          <div className="relative mt-8 aspect-[16/10] overflow-hidden">
-            <Image
-              src={listing.images?.[0] || "/images/placeholder-1.svg"}
+          <div className="mt-8">
+            <PropertyGallery
+              images={listing.images}
               alt={listing.title}
-              fill
-              className="object-cover"
-              priority
+              priceLabel={listing.priceLabel}
             />
-            <span className="swing-tag text-base">{listing.priceLabel}</span>
           </div>
 
           <div className="mt-6 flex flex-wrap gap-6 border-y border-banyan/10 py-4 font-mono text-sm text-banyan/80">
