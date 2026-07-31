@@ -2,11 +2,8 @@
 
 import { useState } from "react";
 
-function encode(data) {
-  return Object.keys(data)
-    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-    .join("&");
-}
+const SHEETS_WEBHOOK_URL =
+  "https://script.google.com/macros/s/AKfycbziYJwzIUTUm79h00fKrw4GL_IrRaaMplisjYqMPx-cCdDmDDvI7rH3vaTevRSRdg4g/exec";
 
 export default function InquiryForm({ listings = [], defaultListing = "" }) {
   const [values, setValues] = useState({
@@ -25,11 +22,13 @@ export default function InquiryForm({ listings = [], defaultListing = "" }) {
     e.preventDefault();
     setStatus("sending");
     try {
-      await fetch("/", {
+      await fetch(SHEETS_WEBHOOK_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "inquiry", ...values }),
+        mode: "no-cors",
+        body: new URLSearchParams(values),
       });
+      // no-cors gives us an opaque response we can't inspect, so a request
+      // that didn't throw is the only signal we get — treat it as success.
       setStatus("sent");
     } catch (err) {
       setStatus("error");
@@ -48,20 +47,7 @@ export default function InquiryForm({ listings = [], defaultListing = "" }) {
   }
 
   return (
-    <form
-      name="inquiry"
-      onSubmit={handleSubmit}
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      className="bg-banyan text-cream p-6"
-    >
-      <input type="hidden" name="form-name" value="inquiry" />
-      <p className="hidden">
-        <label>
-          Don&apos;t fill this out: <input name="bot-field" onChange={handleChange} />
-        </label>
-      </p>
-
+    <form name="inquiry" onSubmit={handleSubmit} className="bg-banyan text-cream p-6">
       <p className="eyebrow text-gold-light">Talk to an agent</p>
       <h3 className="mt-2 font-display text-2xl italic">Ask about a listing</h3>
 
