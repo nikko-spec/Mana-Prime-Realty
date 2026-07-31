@@ -29,7 +29,11 @@ collections:
       - { label: "Bathrooms", name: "bathrooms", widget: "number", default: 0 }
       - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false }
       - { label: "YouTube Video URL", name: "youtubeUrl", widget: "string", required: false }
-      - { label: "Photos", name: "images", widget: "list", field: { label: "Image", name: "image", widget: "image" } }
+      - label: "Photos"
+        name: "images"
+        widget: "list"
+        hint: "Resize photos to under 2000px wide and compress to under 2MB before uploading (e.g. Squoosh.app, or your phone's built-in \"resize\" option when sharing)."
+        field: { label: "Image", name: "image", widget: "image" }
       - { label: "Short Excerpt (for cards)", name: "excerpt", widget: "text" }
       - { label: "Full Description", name: "description", widget: "markdown" }
 
