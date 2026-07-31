@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 const NAV_LINKS = [
@@ -15,13 +16,15 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 bg-banyan text-cream">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-baseline gap-2 group">
-          <span className="font-display text-2xl italic tracking-tight">
-            Mana Prime
-          </span>
-          <span className="eyebrow text-gold-light group-hover:text-cream transition-colors">
-            Realty
-          </span>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/images/logo.png"
+            alt="Mana Prime Realty"
+            width={960}
+            height={391}
+            priority
+            className="h-10 w-auto"
+          />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
