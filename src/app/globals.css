@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-capiz text-ink font-body;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible {
+    outline: 2px solid theme("colors.gold");
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-sienna text-cream font-body text-sm tracking-wide px-6 py-3 rounded-sm transition-colors hover:bg-banyan;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border border-banyan text-banyan font-body text-sm tracking-wide px-6 py-3 rounded-sm transition-colors hover:bg-banyan hover:text-cream;
+  }
+  .eyebrow {
+    @apply font-mono text-xs tracking-[0.25em] uppercase text-gold;
+  }
+
+  /* Signature element: swing-tag price label, referencing physical
+     "for sale" property tags used across PH real estate signage. */
+  .swing-tag {
+    @apply absolute -right-1 top-4 bg-banyan text-cream font-mono text-sm px-3 py-1 shadow-md;
+    clip-path: polygon(0 0, 85% 0, 100% 50%, 85% 100%, 0 100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

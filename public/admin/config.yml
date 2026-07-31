@@ -1,0 +1,52 @@
+backend:
+  name: git-gateway
+  branch: main
+
+publish_mode: editorial_workflow
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "listings"
+    label: "Listings"
+    folder: "content/listings"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - label: "Project Type"
+        name: "projectType"
+        widget: "select"
+        options: ["Condominium", "House and Lot", "Townhouse", "Lot Only", "Commercial"]
+      - { label: "Location", name: "location", widget: "string", hint: "e.g. Alabang, Muntinlupa City" }
+      - { label: "Price (numeric, for filtering)", name: "price", widget: "number" }
+      - { label: "Price Label (displayed)", name: "priceLabel", widget: "string", hint: "e.g. ₱8,500,000" }
+      - { label: "Size in sqm (numeric)", name: "size", widget: "number" }
+      - { label: "Size Label (displayed)", name: "sizeLabel", widget: "string", hint: "e.g. 62 sqm" }
+      - { label: "Bedrooms", name: "bedrooms", widget: "number", default: 0 }
+      - { label: "Bathrooms", name: "bathrooms", widget: "number", default: 0 }
+      - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false }
+      - { label: "YouTube Video URL", name: "youtubeUrl", widget: "string", required: false }
+      - { label: "Photos", name: "images", widget: "list", field: { label: "Image", name: "image", widget: "image" } }
+      - { label: "Short Excerpt (for cards)", name: "excerpt", widget: "text" }
+      - { label: "Full Description", name: "description", widget: "markdown" }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "About Us"
+        name: "about"
+        file: "content/pages/about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Buyers Guide"
+        name: "buyers-guide"
+        file: "content/pages/buyers-guide.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }

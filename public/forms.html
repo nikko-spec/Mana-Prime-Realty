@@ -1,0 +1,15 @@
+<!-- This file exists only so Netlify's build bot detects the "inquiry"
+     form (Next.js renders it client-side, which Netlify's static scan
+     can miss). It is never linked to or shown to visitors. -->
+<html>
+  <body>
+    <form name="inquiry" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="inquiry" />
+      <input name="bot-field" />
+      <select name="listing"><option value="General Inquiry">General Inquiry</option></select>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+    </form>
+  </body>
+</html>

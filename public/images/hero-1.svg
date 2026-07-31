@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#16302B"/>
+      <stop offset="100%" stop-color="#20463F"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <text x="50%" y="52%" text-anchor="middle" font-family="Georgia, serif" font-size="42" fill="#F1EAD9" opacity="0.9">Featured Listing</text>
+  <text x="50%" y="60%" text-anchor="middle" font-family="Georgia, serif" font-size="16" letter-spacing="4" fill="#F1EAD9" opacity="0.6">MANA PRIME REALTY</text>
+</svg>
