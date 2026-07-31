@@ -8,6 +8,17 @@ function encode(data) {
     .join("&");
 }
 
+const SHEETS_WEBHOOK_URL = process.env.NEXT_PUBLIC_GOOGLE_SHEETS_WEBHOOK_URL;
+
+function submitToSheets(values) {
+  if (!SHEETS_WEBHOOK_URL) return;
+  const body = new FormData();
+  Object.entries(values).forEach(([key, value]) => body.append(key, value));
+  // Apps Script web apps don't send CORS headers, so the response is opaque;
+  // no-cors still delivers the POST, we just can't read anything back.
+  fetch(SHEETS_WEBHOOK_URL, { method: "POST", mode: "no-cors", body }).catch(() => {});
+}
+
 export default function InquiryForm({ listings = [], defaultListing = "" }) {
   const [values, setValues] = useState({
     listing: defaultListing,
@@ -24,6 +35,7 @@ export default function InquiryForm({ listings = [], defaultListing = "" }) {
   async function handleSubmit(e) {
     e.preventDefault();
     setStatus("sending");
+    submitToSheets(values);
     try {
       await fetch("/", {
         method: "POST",
