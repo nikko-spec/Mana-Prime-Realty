@@ -34,8 +34,8 @@ export default function Footer() {
         <div>
           <p className="eyebrow mb-3">Contact</p>
           <ul className="space-y-2 text-sm text-cream/70">
-            <li>hello@manaprimerealty.com</li>
-            <li>+63 900 000 0000</li>
+            <li>nikkomana@gmail.com</li>
+            <li>+63 919 007 5001 (Viber &amp; WhatsApp)</li>
             <li>Metro Manila, Philippines</li>
           </ul>
         </div>
