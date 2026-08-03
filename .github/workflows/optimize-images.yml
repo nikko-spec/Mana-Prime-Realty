@@ -1,0 +1,38 @@
+name: Optimize listing photos
+
+on:
+  push:
+    paths:
+      - "public/images/uploads/**"
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm install --no-save sharp
+
+      - run: node scripts/optimize-images.mjs
+
+      - name: Commit optimized photos
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add public/images/uploads
+            git commit -m "Auto-optimize listing photos [skip ci]"
+            git push origin HEAD:${{ github.ref_name }}
+          else
+            echo "No images needed optimizing."
+          fi
