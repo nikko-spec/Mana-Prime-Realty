@@ -10,15 +10,7 @@ sizeLabel: 170 sqm Floor Area | 120 sqm Lot
 bedrooms: 4
 bathrooms: 3
 featured: true
-images:
-  - /images/uploads/img_2933-2.jpg
-  - /images/uploads/img_2970.jpg
-  - /images/uploads/img_2943-1.jpg
-  - /images/uploads/img_2946.jpg
-  - /images/uploads/img_2960.jpg
-  - /images/uploads/img_2986.jpg
-  - /images/uploads/img_2941.jpg
-  - /images/uploads/img_2999.jpg
+images: []
 excerpt: A brand-new 4-bedroom triplex in Metrocor B Homes, Las Piñas, featuring
   spacious living areas, two-car parking, and a 170 sqm floor area on a 120 sqm
   lot.
