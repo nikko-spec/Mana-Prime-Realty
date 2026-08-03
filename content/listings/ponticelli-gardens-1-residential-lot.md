@@ -5,7 +5,7 @@ projectType: Lot Only
 location: Ponticelli Gardens 1, Villar City, Daang Hari
 price: 7000000
 priceLabel: "7000000"
-size: 114
+size: 121
 sizeLabel: 121 sqm Lot
 bedrooms: 0
 bathrooms: 0
