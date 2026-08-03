@@ -31,11 +31,21 @@ async function optimize(filePath) {
   const image = sharp(original, { failOn: "none" });
   const metadata = await image.metadata();
 
-  const needsResize = metadata.width && metadata.width > MAX_WIDTH;
-  const needsCompression = original.byteLength > MAX_BYTES;
-  if (!needsResize && !needsCompression) return false;
+  // EXIF orientation 5-8 mean the camera stored the image on its side, so the
+  // width/height you'd actually see on screen are swapped from the raw pixel data.
+  const orientation = metadata.orientation || 1;
+  const swapsDimensions = orientation >= 5 && orientation <= 8;
+  const displayWidth = swapsDimensions ? metadata.height : metadata.width;
 
-  let pipeline = image;
+  const needsResize = displayWidth && displayWidth > MAX_WIDTH;
+  const needsCompression = original.byteLength > MAX_BYTES;
+  const needsRotationFix = orientation !== 1;
+  if (!needsResize && !needsCompression && !needsRotationFix) return false;
+
+  // .rotate() with no args bakes the EXIF orientation into the pixels and
+  // strips the tag, so every consumer displays it upright without relying on
+  // EXIF support (sharp otherwise drops EXIF metadata on output by default).
+  let pipeline = image.rotate();
   if (needsResize) {
     pipeline = pipeline.resize({ width: MAX_WIDTH, withoutEnlargement: true });
   }
@@ -50,7 +60,8 @@ async function optimize(filePath) {
   }
 
   const optimized = await pipeline.toBuffer();
-  if (optimized.byteLength >= original.byteLength && !needsResize) return false;
+  const onlyCompressing = !needsResize && !needsRotationFix;
+  if (onlyCompressing && optimized.byteLength >= original.byteLength) return false;
 
   await writeFile(filePath, optimized);
   const beforeKb = (original.byteLength / 1024).toFixed(0);
