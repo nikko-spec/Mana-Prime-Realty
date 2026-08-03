@@ -4,7 +4,7 @@ slug: ponticelli-gardens-1-residential-lot
 projectType: Lot Only
 location: Ponticelli Gardens 1, Villar City, Daang Hari
 price: 7000000
-priceLabel: "7000000"
+priceLabel: ₱7,000,000
 size: 121
 sizeLabel: 121 sqm Lot
 bedrooms: 0
