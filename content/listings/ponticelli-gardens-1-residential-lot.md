@@ -12,43 +12,11 @@ bathrooms: 0
 featured: true
 images:
   - /images/uploads/img_5508.jpg
-excerpt: A 121 sqm residential lot in Ponticelli Gardens 1, Villar City, Daang
-  Hari—available for ₱6.5M cash or ₱7M through bank financing.
+excerpt: A 121 sqm residential lot in Ponticelli Gardens 1, Villar City, Daang Hari
 description: >-
   Build your future home in Ponticelli Gardens 1, a residential community
   conveniently located within Villar City along Daang Hari.
 
 
-
-
   This 121 sqm residential lot offers a great opportunity for homebuyers looking for a property in a well-established community near Alabang, Las Piñas, and Cavite.
-
-
-
-
-  PROPERTY DETAILS
-
-
-
-
-  • Property Type: Residential Lot
-
-
-  • Lot Area: 121 sqm
-
-
-  • Location: Ponticelli Gardens 1, Villar City, Daang Hari
-
-
-
-
-  SELLING PRICE
-
-
-
-
-  • Cash Price: ₱6,500,000
-
-
-  • Bank Financing Price: ₱7,000,000
 ---
