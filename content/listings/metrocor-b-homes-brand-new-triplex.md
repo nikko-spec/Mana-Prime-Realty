@@ -11,7 +11,10 @@ bedrooms: 4
 bathrooms: 3
 featured: true
 images:
-  - /images/uploads/img_2933-2.jpg
+  - /images/uploads/viber_image_2026-07-23_18-19-22-304.jpg
+  - /images/uploads/viber_image_2026-07-23_18-19-28-324.jpg
+  - /images/uploads/viber_image_2026-07-23_18-19-25-178.jpg
+  - /images/uploads/viber_image_2026-07-23_18-19-25-824.jpg
 excerpt: A brand-new 4-bedroom triplex in Metrocor B Homes, Las Piñas, featuring
   spacious living areas, two-car parking, and a 170 sqm floor area on a 120 sqm
   lot.
