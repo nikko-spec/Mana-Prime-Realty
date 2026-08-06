@@ -4,7 +4,7 @@ slug: periwinkle-townhouse-talon-village
 projectType: Townhouse
 location: Periwinkle Street, Talon Village, Las Piñas City
 price: 9400000
-priceLabel: "9400000"
+priceLabel: ₱9,400,000
 size: 140
 sizeLabel: 140 sqm Floor Area | 75 sqm Lot
 bedrooms: 4
