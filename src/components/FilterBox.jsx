@@ -35,7 +35,7 @@ export default function FilterBox({ projectTypes, locations, floating = true }) 
       onSubmit={handleSubmit}
       className={
         floating
-          ? "relative z-20 mx-auto -mt-24 mb-16 w-[92%] max-w-4xl rounded-sm bg-cream shadow-xl md:-mt-16"
+          ? "relative z-20 mx-auto -mt-10 mb-16 w-[92%] max-w-4xl rounded-sm bg-cream shadow-xl md:-mt-16"
           : "w-full rounded-sm bg-cream shadow-sm border border-banyan/10"
       }
     >

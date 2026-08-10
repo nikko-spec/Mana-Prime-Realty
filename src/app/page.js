@@ -19,7 +19,7 @@ export default function HomePage() {
       </Suspense>
 
       <section className="mx-auto max-w-6xl px-6 pb-24">
-        <div className="grid gap-10 md:grid-cols-[1fr_320px]">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-[1fr_320px]">
           <div>
             <p className="eyebrow">Curated for you</p>
             <h2 className="mt-2 font-display text-3xl italic text-ink">

@@ -41,6 +41,11 @@ export const metadata = {
     "Mana Prime Realty — condos, house and lot, townhouses, and titled lots across the Philippines. Talk to an agent who has actually seen the unit.",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

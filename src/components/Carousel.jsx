@@ -40,12 +40,12 @@ export default function Carousel({ listings }) {
         </div>
       ))}
 
-      <div className="relative z-10 flex h-full max-w-6xl mx-auto flex-col justify-end px-6 pb-32 md:pb-40">
+      <div className="relative z-10 flex h-full max-w-6xl mx-auto flex-col justify-end px-6 pb-24 md:pb-40">
         <p className="eyebrow text-gold-light">Featured Listing</p>
-        <h1 className="mt-3 max-w-xl font-display text-4xl md:text-6xl italic text-cream leading-[1.05]">
+        <h1 className="mt-4 max-w-xl font-display text-3xl md:text-6xl italic text-cream leading-[1.15] md:leading-[1.05]">
           {active.title}
         </h1>
-        <p className="mt-4 max-w-md text-cream/80 font-body">{active.excerpt}</p>
+        <p className="mt-4 max-w-md text-cream/80 font-body line-clamp-2 md:line-clamp-none">{active.excerpt}</p>
         <div className="mt-6 flex items-center gap-4">
           <Link href={`/properties/${active.slug}`} className="btn-primary">
             View Details
@@ -60,7 +60,7 @@ export default function Carousel({ listings }) {
             type="button"
             onClick={prev}
             aria-label="Previous listing"
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 rounded-full bg-cream/10 p-2 text-cream hover:bg-cream/20 transition-colors"
+            className="hidden md:block absolute left-4 top-1/2 -translate-y-1/2 z-10 rounded-full bg-cream/10 p-2 text-cream hover:bg-cream/20 transition-colors"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M15 18l-6-6 6-6" />
@@ -70,7 +70,7 @@ export default function Carousel({ listings }) {
             type="button"
             onClick={next}
             aria-label="Next listing"
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 rounded-full bg-cream/10 p-2 text-cream hover:bg-cream/20 transition-colors"
+            className="hidden md:block absolute right-4 top-1/2 -translate-y-1/2 z-10 rounded-full bg-cream/10 p-2 text-cream hover:bg-cream/20 transition-colors"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M9 18l6-6-6-6" />

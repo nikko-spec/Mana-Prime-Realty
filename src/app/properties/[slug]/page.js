@@ -31,7 +31,7 @@ export default function PropertyDetailPage({ params }) {
         ← Back to Properties
       </Link>
 
-      <div className="mt-6 grid gap-12 md:grid-cols-[1fr_320px]">
+      <div className="mt-6 grid grid-cols-1 gap-12 md:grid-cols-[1fr_320px]">
         <div>
           <p className="eyebrow">{listing.projectType}</p>
           <h1 className="mt-2 font-display text-4xl italic text-ink">{listing.title}</h1>
