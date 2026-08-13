@@ -12,10 +12,11 @@ bathrooms: 0
 featured: true
 images:
   - /images/uploads/img_5508.jpg
-  - /images/uploads/img_1198.jpg
-  - /images/uploads/img_1099.jpg
-  - /images/uploads/img_1195-3.jpg
-  - /images/uploads/img_1196-3.jpg
+  - /images/uploads/img_1200-2.png
+  - /images/uploads/img_1203.png
+  - /images/uploads/img_1202-2.png
+  - /images/uploads/img_1195-2.png
+  - /images/uploads/img_1196-2.png
 excerpt: A 121 sqm residential lot in Ponticelli Gardens 1, Villar City, Daang Hari
 description: >-
   Build your future home in Ponticelli Gardens 1, a residential community
