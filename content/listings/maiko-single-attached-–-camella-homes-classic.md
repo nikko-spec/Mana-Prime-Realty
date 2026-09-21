@@ -11,7 +11,7 @@ bedrooms: 4
 bathrooms: 3
 featured: true
 images:
-  - /images/uploads/img_3825.png
+  - /images/uploads/54517bbb-ea9d-489a-8ffc-96fe92eac92a.png
   - /images/uploads/img_3847.png
   - /images/uploads/img_3846.png
   - /images/uploads/img_3839.png
