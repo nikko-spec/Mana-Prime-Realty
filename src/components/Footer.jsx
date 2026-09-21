@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { EMAIL, PHONE_DISPLAY, PHONE_E164, getContactLinks } from "@/lib/contact";
 
 export default function Footer() {
   return (
@@ -34,8 +35,12 @@ export default function Footer() {
         <div>
           <p className="eyebrow mb-3">Contact</p>
           <ul className="space-y-2 text-sm text-cream/70">
-            <li>nikkomana@gmail.com</li>
-            <li>+63 919 007 5001 (Viber &amp; WhatsApp)</li>
+            <li><a href={`mailto:${EMAIL}`} className="hover:text-gold-light">{EMAIL}</a></li>
+            <li>
+              <a href={`tel:${PHONE_E164}`} className="hover:text-gold-light">{PHONE_DISPLAY}</a>{" "}
+              (<a href={getContactLinks().viber} className="hover:text-gold-light">Viber</a> &amp;{" "}
+              <a href={getContactLinks().whatsapp} target="_blank" rel="noopener noreferrer" className="hover:text-gold-light">WhatsApp</a>)
+            </li>
             <li>Metro Manila, Philippines</li>
           </ul>
         </div>

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import ContactButtons from "@/components/ContactButtons";
 import InquiryForm from "@/components/InquiryForm";
 import PropertyGallery from "@/components/PropertyGallery";
 import { getAllListings, getListingBySlug, getYoutubeId } from "@/lib/listings";
@@ -26,7 +27,7 @@ export default function PropertyDetailPage({ params }) {
   const videoId = getYoutubeId(listing.youtubeUrl);
 
   return (
-    <div className="mx-auto max-w-6xl px-6 py-16">
+    <div className="mx-auto max-w-6xl px-6 py-16 pb-28 md:pb-16">
       <Link href="/properties" className="font-mono text-xs text-banyan/60 hover:text-banyan">
         ← Back to Properties
       </Link>
@@ -49,6 +50,10 @@ export default function PropertyDetailPage({ params }) {
             <span>{listing.sizeLabel}</span>
             {listing.bedrooms > 0 && <span>{listing.bedrooms} Bedrooms</span>}
             {listing.bathrooms > 0 && <span>{listing.bathrooms} Bathrooms</span>}
+          </div>
+
+          <div className="mt-6">
+            <ContactButtons listingTitle={listing.title} />
           </div>
 
           <div className="prose prose-headings:font-display mt-8 max-w-none whitespace-pre-line text-ink/80">
@@ -86,6 +91,8 @@ export default function PropertyDetailPage({ params }) {
           <InquiryForm listings={allListings} defaultListing={listing.title} />
         </aside>
       </div>
+
+      <ContactButtons listingTitle={listing.title} variant="bar" />
     </div>
   );
 }
