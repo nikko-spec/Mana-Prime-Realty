@@ -11,7 +11,7 @@ bedrooms: 4
 bathrooms: 3
 featured: true
 images:
-  - /images/uploads/img_3825.png
+  - /images/uploads/54517bbb-ea9d-489a-8ffc-96fe92eac92a.png
   - /images/uploads/img_3847.png
   - /images/uploads/img_3846.png
   - /images/uploads/img_3839.png
@@ -27,16 +27,10 @@ description: >-
   home located in Camella Homes Classic, Pilar Village, Las Piñas City.
 
 
-
-
   Unit 1 – Block 1 Lot 12-B offers a generous 158 sqm floor area on a 126 sqm lot. Designed for growing and multi-generational families, the home features four spacious bedrooms, including a convenient ground-floor elderly room, modern living spaces, and a two-car carport.
 
 
-
-
-  PROPERTY DETAILS
-
-
+  **PROPERTY DETAILS**
 
 
   • Model: Maiko – Single Attached
@@ -60,11 +54,7 @@ description: >-
   • Carport: 2 Cars
 
 
-
-
-  PROPERTY FEATURES
-
-
+  **PROPERTY FEATURES**
 
 
   • 4 Spacious Bedrooms with Built-in Cabinets
