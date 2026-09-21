@@ -5,6 +5,35 @@ import InquiryForm from "@/components/InquiryForm";
 import PropertyGallery from "@/components/PropertyGallery";
 import { getAllListings, getListingBySlug, getYoutubeId } from "@/lib/listings";
 
+const BULLET = /^\s*[•\-*]\s+/;
+
+// Turns the CMS description text into tidy blocks: paragraphs, headings and
+// bullet lists, ignoring however many blank lines the editor left in between.
+function parseDescription(text = "") {
+  const blocks = [];
+  const chunks = text
+    .split(/\n\s*\n/)
+    .map((c) => c.trim())
+    .filter(Boolean);
+
+  for (const chunk of chunks) {
+    const lines = chunk.split("\n").map((l) => l.trim()).filter(Boolean);
+    const isBullets = lines.every((l) => BULLET.test(l));
+    const last = blocks[blocks.length - 1];
+
+    if (isBullets) {
+      const items = lines.map((l) => l.replace(BULLET, ""));
+      if (last && last.type === "list") last.items.push(...items);
+      else blocks.push({ type: "list", items });
+    } else if (chunk.length <= 60 && chunk === chunk.toUpperCase() && /[A-Z]/.test(chunk)) {
+      blocks.push({ type: "heading", text: chunk });
+    } else {
+      blocks.push({ type: "paragraph", text: lines.join(" ") });
+    }
+  }
+  return blocks;
+}
+
 export function generateStaticParams() {
   return getAllListings().map((l) => ({ slug: l.slug }));
 }
@@ -23,6 +52,7 @@ export default function PropertyDetailPage({ params }) {
   const allListings = getAllListings();
   if (!listing) notFound();
 
+  const descriptionBlocks = parseDescription(listing.description);
   const videoId = getYoutubeId(listing.youtubeUrl);
 
   return (
@@ -51,8 +81,30 @@ export default function PropertyDetailPage({ params }) {
             {listing.bathrooms > 0 && <span>{listing.bathrooms} Bathrooms</span>}
           </div>
 
-          <div className="prose prose-headings:font-display mt-8 max-w-none whitespace-pre-line text-ink/80">
-            {listing.description}
+          <div className="mt-8 max-w-none space-y-4 text-ink/80">
+            {descriptionBlocks.map((block, i) => {
+              if (block.type === "heading") {
+                return (
+                  <h2 key={i} className="eyebrow !mt-8">
+                    {block.text}
+                  </h2>
+                );
+              }
+              if (block.type === "list") {
+                return (
+                  <ul key={i} className="list-disc space-y-1.5 pl-5 marker:text-banyan/50">
+                    {block.items.map((item, j) => (
+                      <li key={j}>{item}</li>
+                    ))}
+                  </ul>
+                );
+              }
+              return (
+                <p key={i} className="leading-relaxed">
+                  {block.text}
+                </p>
+              );
+            })}
           </div>
 
           {videoId && (
