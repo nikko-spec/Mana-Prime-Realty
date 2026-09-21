@@ -20,6 +20,11 @@ export default function InquiryForm({ listings = [], defaultListing = "" }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    // Bots fill the hidden field; pretend success without sending.
+    if (e.target.elements.website.value) {
+      setStatus("sent");
+      return;
+    }
     setStatus("sending");
     try {
       await fetch(SHEETS_WEBHOOK_URL, {
@@ -52,6 +57,15 @@ export default function InquiryForm({ listings = [], defaultListing = "" }) {
       <h3 className="mt-2 font-display text-2xl italic">Ask about a listing</h3>
 
       <div className="mt-6 space-y-4">
+        <input
+          type="text"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          className="absolute -left-[9999px] h-0 w-0 opacity-0"
+        />
+
         <label className="block">
           <span className="text-xs uppercase tracking-wide text-cream/60">Listing</span>
           <select
