@@ -15,7 +15,6 @@ images:
   - /images/uploads/viber_image_2026-09-23_09-38-59-053.jpg
   - /images/uploads/viber_image_2026-09-23_09-38-59-465.jpg
   - /images/uploads/viber_image_2026-09-23_09-38-59-784.jpg
-  - /images/uploads/viber_image_2026-09-23_09-38-59-784.jpg
   - /images/uploads/viber_image_2026-09-23_09-39-00-110.jpg
   - /images/uploads/viber_image_2026-09-23_09-39-00-782.jpg
 excerpt: A brand-new fully furnished luxury 2-storey single-detached home in BF
