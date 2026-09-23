@@ -10,6 +10,14 @@ sizeLabel: 489.2 sqm Covered Area | 380 sqm Lot
 bedrooms: 4
 bathrooms: 4
 featured: true
+images:
+  - /images/uploads/viber_image_2026-09-23_09-38-53-442.jpg
+  - /images/uploads/viber_image_2026-09-23_09-38-59-053.jpg
+  - /images/uploads/viber_image_2026-09-23_09-38-59-465.jpg
+  - /images/uploads/viber_image_2026-09-23_09-38-59-784.jpg
+  - /images/uploads/viber_image_2026-09-23_09-38-59-784.jpg
+  - /images/uploads/viber_image_2026-09-23_09-39-00-110.jpg
+  - /images/uploads/viber_image_2026-09-23_09-39-00-782.jpg
 excerpt: A brand-new fully furnished luxury 2-storey single-detached home in BF
   Resort Village, featuring 489.2 sqm of covered area, 4 bedrooms with ensuite
   baths, a 3-SUV smart garage, entertainment room, spacious lanai, and premium
